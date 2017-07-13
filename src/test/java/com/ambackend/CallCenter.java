@@ -61,7 +61,7 @@ public class CallCenter {
     }
 
     @Test
-    public void testDispatcherCallEnqueue() throws InterruptedException {
+    public void testDispatcherMoreCallsThanThreads() throws InterruptedException {
         Dispatcher dispatcher = populatedDispatcher(7,4,2);
         final Counter counter = new Counter(30, 0);
 
@@ -95,7 +95,7 @@ public class CallCenter {
     }
 
     @Test
-    public void testLessEmployeesThanThreads() throws InterruptedException {
+    public void testLessEmployeesThanCalls() throws InterruptedException {
         Dispatcher dispatcher = populatedDispatcher(3,2,1);
         final Counter counter = new Counter(10, 0);
 

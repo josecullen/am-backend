@@ -11,8 +11,9 @@ import java.util.stream.Stream;
  * Created by josecullen on 11/07/17.
  */
 public class CallAttenders {
-    PriorityBlockingQueue<Employee> queue;
-    public CallAttenders(){
+    protected PriorityBlockingQueue<Employee> queue;
+
+    protected CallAttenders(){
         queue = new PriorityBlockingQueue<Employee>(100,(Employee a, Employee b) ->
             a.attendPriority() < b.attendPriority() ? -1 : 1
         );
