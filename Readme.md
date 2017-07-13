@@ -18,7 +18,7 @@ vuelve a despachar la call.
 La solución tiene su test *testDispatcherMoreCallsThanThreads*.
 En *dispatchCall* se agrega la llamada al **ExecutorService**, que maneja sola el encolado de runnables cuando superan 
 el pool de threads. 
-Un problema que ocurrió haciendo esto fue que asignaba el Empleado *antes* de ponerlo en el pool, pero, debido a la 
+Un problema que me ocurrió haciendo esto fue que asignaba el Empleado *antes* de ponerlo en el pool, pero, debido a la 
 demora, cuando éste realmente corría, a veces ya había un empleado de menor rango disponible. Por eso se cambió para que
 la asignación del empleado se de cuando está corriendo el runnable.
 
